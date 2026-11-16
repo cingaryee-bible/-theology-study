@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="從以弗所的城市歷史與《使徒行傳》19章，探索教會傳統如何理解領受聖靈。">
+<title>神學研究網站｜以弗所</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="data.js"></script>
+<script defer src="app.js"></script>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap top">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">✦</span>神學研究網站</a>
+    <nav aria-label="研究工具">
+      <a href="./">04 <span>每日經課深度研究</span></a>
+      <a href="#compare" id="nav-compare">01 <span>神學觀點比較</span></a>
+      <a href="#history" id="nav-history">03 <span>歷史時空探索</span></a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="wrap" id="history" aria-labelledby="history-title">
+    <div class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">小亞細亞 · 羅馬亞細亞省</div>
+        <h1 id="history-title">以弗所</h1>
+        <p>港城、神廟與保羅的足跡</p>
+        <a class="hero-link" href="#event-temple">探索城市時間線 ↓</a>
+      </div>
+      <figure>
+        <img src="theatre.jpg" width="1246" height="934" alt="從上方俯瞰以弗所大劇場的半圓形石座與舞台遺址">
+        <figcaption>以弗所大劇場現址 · <a href="https://commons.wikimedia.org/wiki/File:Theater_of_Ephesus.jpg">CherryX／Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></figcaption>
+      </figure>
+    </div>
+    <div class="workspace">
+      <aside class="timeline" aria-labelledby="timeline-title">
+        <h2 id="timeline-title">城市時間線</h2>
+        <label class="sr-only" for="era">篩選時期</label>
+        <select id="era">
+          <option value="">所有時期</option>
+          <option>保羅之前</option>
+          <option>保羅在以弗所</option>
+          <option>保羅之後</option>
+        </select>
+        <div id="events"></div>
+      </aside>
+      <article id="event-detail" class="detail" aria-labelledby="event-title"></article>
+    </div>
+    <section class="research" aria-labelledby="research-title">
+      <h2 id="research-title">延伸研讀</h2>
+      <p>查考古報告、遺址資料同古代文獻。</p>
+      <div id="research-links"></div>
+    </section>
+  </section>
+  <section id="compare" class="wrap" hidden aria-labelledby="compare-title">
+    <div class="compare-intro">
+      <div class="eyebrow">以弗所 · 徒 19:1–7</div>
+      <h1 id="compare-title">怎樣理解領受聖靈？</h1>
+      <p>從約翰的洗，到奉耶穌之名受洗、按手與說方言。三份教會文件怎樣理解這些經歷？</p>
+      <a href="#event-disciples">← 回到以弗所的門徒</a>
+    </div>
+    <details class="passage" open>
+      <summary>徒 19:1–7 記述了甚麼？</summary>
+      <p>保羅在以弗所遇見約十二人。他們先前只受過約翰的洗，聽見保羅指向耶穌的教導後奉主耶穌的名受洗。保羅按手，聖靈臨到，他們說方言，也說預言。</p>
+      <a href="https://bible.usccb.org/bible/acts/19" target="_blank" rel="noopener">閱讀徒 19 全章 ↗</a>
+    </details>
+    <fieldset id="position-picker">
+      <legend>選擇要比較的傳統</legend>
+    </fieldset>
+    <p class="context">以下以列明的教會文件為依據。衛理宗欄引用美國聯合衛理公會文件，供研讀參考。</p>
+    <div id="comparison"></div>
+    <div class="study-question">
+      <h2>並讀經文</h2>
+      <p>將徒 8:14–17、10:44–48 和 19:1–7 放在一起。各段中，水洗、按手和聖靈臨到的次序有何異同？各傳統如何用這些段落解釋自己的看法？</p>
+      <a href="https://bible.usccb.org/bible/acts/8" target="_blank" rel="noopener">徒 8 ↗</a>
+      <a href="https://bible.usccb.org/bible/acts/10" target="_blank" rel="noopener">徒 10 ↗</a>
+    </div>
+  </section>
+</main>
+<footer class="wrap footer">神學研究網站 <span>以弗所研讀</span></footer>
+</body>
+</html>

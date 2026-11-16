@@ -15,15 +15,48 @@ function external(label, url, className) {
   return link;
 }
 
+function youtubeVideoId(link) {
+  let url;
+  try {
+    url = new URL(link);
+  } catch {
+    return null;
+  }
+
+  const [, route, segment] = url.pathname.split('/');
+  let id;
+  if (url.hostname === 'youtu.be') {
+    id = route;
+  } else if (['www.youtube.com', 'youtube.com', 'm.youtube.com', 'music.youtube.com',
+    'www.youtube-nocookie.com', 'youtube-nocookie.com'].includes(url.hostname)) {
+    if (route === 'watch') id = url.searchParams.get('v');
+    if (['embed', 'shorts', 'live'].includes(route)) id = segment;
+  }
+  return /^[A-Za-z0-9_-]{11}$/.test(id ?? '') ? id : null;
+}
+
 function song(songData, label, className) {
   const section = element('section', '', className);
   section.append(
     element('div', label, 'eyebrow'),
     element('h2', songData.title),
     element('p', songData.credit),
-    element('p', songData.note),
-    external('在 YouTube 播放', songData.url, 'listen')
+    element('p', songData.note)
   );
+
+  const videoId = youtubeVideoId(songData.url);
+  if (videoId) {
+    const player = element('iframe', '', 'song-player');
+    player.title = songData.title + '｜YouTube 播放器';
+    player.loading = 'lazy';
+    player.referrerPolicy = 'strict-origin-when-cross-origin';
+    player.allow = 'encrypted-media; picture-in-picture; fullscreen';
+    player.allowFullscreen = true;
+    player.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?playsinline=1';
+    section.append(player);
+  }
+
+  section.append(external('在 YouTube 開啟', songData.url, 'listen'));
   return section;
 }
 

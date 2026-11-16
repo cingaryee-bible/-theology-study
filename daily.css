@@ -4,6 +4,17 @@
 .daily-opening h2,.daily-end h2{font-size:clamp(1.5rem,4vw,2rem);margin:.25em 0}
 .daily-opening p{max-width:62ch;margin:.4em 0 0}
 .daily-opening a{color:var(--gold)}
+.song-player {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  min-height: 200px;
+  aspect-ratio: 16 / 9;
+  margin-top: 16px;
+  border: 0;
+  border-radius: 6px;
+  background: #151515;
+}
 .listen{display:inline-block;font-weight:700;margin-top:10px}
 .daily h1{font-size:clamp(2rem,6vw,3.55rem);margin:.13em 0 .35em}
 .daily h2{line-height:1.4}

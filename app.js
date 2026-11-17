@@ -1,5 +1,5 @@
 const byId = (id) => document.getElementById(id);
-const topics = ['聖靈與水洗', '怎樣讀徒 19', '說方言的角色'];
+const topics = typeof comparisonTopics !== 'undefined' ? comparisonTopics : ['聖靈與水洗', '怎樣讀徒 19', '說方言的角色'];
 const era = byId('era');
 const eventList = byId('events');
 const detail = byId('event-detail');
@@ -31,7 +31,7 @@ function renderHistory(selected) {
     <div class="lens"><h3>研讀線索</h3><p>${selected.lens}</p></div>
     <h3>資料來源</h3>
     ${links(selected.refs)}
-    ${selected.compare ? '<a class="jump" href="#compare">比較各傳統點讀徒 19 →</a>' : ''}
+    ${selected.compare ? `<a class="jump" href="#compare">${typeof compareJumpLabel !== 'undefined' ? compareJumpLabel : '比較各傳統點讀徒 19'} →</a>` : ''}
   `;
 }
 
@@ -58,7 +58,7 @@ function renderComparison() {
   ).join('');
   byId('comparison').innerHTML = `
     <div class="table-scroll"><table>
-      <caption class="sr-only">各傳統對徒 19:1–7 的理解</caption>
+      <caption class="sr-only">${typeof comparisonCaption !== 'undefined' ? comparisonCaption : '各傳統對徒 19:1–7 的理解'}</caption>
       <thead><tr><th scope="col">比較範圍</th>${headings}</tr></thead>
       <tbody>${rows}<tr><th scope="row">資料來源</th>${sourceRow}</tr></tbody>
     </table></div>
@@ -71,6 +71,9 @@ function renderComparison() {
 function route(moveFocus = false) {
   const hash = location.hash;
   const comparison = hash === '#compare';
+  document.querySelectorAll('.topic-nav a').forEach((link) => {
+    link.href = link.href.split('#')[0] + (comparison ? '#compare' : '#history');
+  });
   byId('compare').hidden = !comparison;
   byId('history').hidden = comparison;
   for (const page of ['compare', 'history']) {
@@ -103,7 +106,8 @@ picker.insertAdjacentHTML('beforeend', positions.map((position) =>
   `<label class="choice"><input type="checkbox" id="tradition-${position.id}" checked> ${position.name}</label>`
 ).join(''));
 picker.addEventListener('change', renderComparison);
-byId('research-links').innerHTML = links(['archive','unesco','strabo','harbor','inscription']);
+byId('research-links').innerHTML = links(typeof researchSourceKeys !== 'undefined' ? researchSourceKeys : ['archive','unesco','strabo','harbor','inscription']);
 window.addEventListener('hashchange', () => route(true));
 renderComparison();
 route();
+

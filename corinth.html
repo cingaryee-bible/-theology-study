@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="走入羅馬哥林多的城市、聚會與餐桌，比較五份代表教會文件對聖餐的理解。">
+<title>神學研究網站｜哥林多與聖餐</title>
+<link rel="stylesheet" href="style.css?v=20261118">
+<script defer src="corinth-data.js?v=20261118"></script>
+<script defer src="app.js?v=20261118"></script>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap top">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">✦</span>神學研究網站</a>
+    <nav aria-label="研究工具">
+      <a href="./">04 <span>每日經課深度研究</span></a>
+      <a href="#compare" id="nav-compare">01 <span>神學觀點比較</span></a>
+      <a href="#history" id="nav-history">03 <span>歷史時空探索</span></a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap topic-nav" aria-label="研究主題"><strong>研究主題</strong><a href="explore.html">以弗所 · 聖靈與洗禮</a><a href="corinth.html" aria-current="page">哥林多 · 聖餐與群體</a></div>
+  <section class="wrap" id="history" aria-labelledby="history-title">
+    <div class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">希臘地峽 · 羅馬亞該亞省</div>
+        <h1 id="history-title">哥林多</h1>
+        <p>城市、餐桌與一個身體</p>
+        <a class="hero-link" href="#event-colony">探索城市時間線 ↓</a>
+      </div>
+      <div class="tableau"><span class="eyebrow">林前10–12章 · 研讀主線</span><div class="bread-mark" aria-hidden="true">◯</div><h2>一個餅 · 一個身體</h2><p>從城市的身份與分裂<br>走到基督餐桌上的彼此接納</p><a href="#event-supper">由主餐的衝突開始 →</a></div>
+    </div>
+    <div class="workspace">
+      <aside class="timeline" aria-labelledby="timeline-title">
+        <h2 id="timeline-title">歷史場景與經文</h2>
+        <label class="sr-only" for="era">篩選時期</label>
+        <select id="era">
+          <option value="">所有場景</option>
+          <option>城市形成</option><option>保羅與教會</option><option>餐桌與信仰</option><option>證據辨讀</option>
+        </select>
+        <div id="events"></div>
+      </aside>
+      <article id="event-detail" class="detail" aria-labelledby="event-title"></article>
+    </div>
+    <section class="research" aria-labelledby="research-title">
+      <h2 id="research-title">延伸研讀</h2>
+      <p>先讀經文，再查遺址與研究。標為「研讀問題」及「重建」的內容並非已證實的歷史細節。</p>
+      <div id="research-links"></div>
+    </section>
+  </section>
+  <section id="compare" class="wrap" hidden aria-labelledby="compare-title">
+    <div class="compare-intro">
+      <div class="eyebrow">哥林多 · 林前10–11章</div>
+      <h1 id="compare-title">同樣領聖餐，各傳統點理解？</h1>
+      <p>從基督的臨在、記念與恩典，到餐桌上的合一。以五份代表文件理解各傳統珍惜的重點。</p>
+      <a href="#event-supper">← 回到哥林多的餐桌</a>
+    </div>
+    <details class="passage" open>
+      <summary>先讀經文：林前10:16–17；11:17–34</summary>
+      <p>10章把同領餅杯與同為一個身體連在一起。11章先責備聚會中的分裂、飢餓與羞辱，然後傳述主餐的設立，要求自省，並囑咐彼此等候。</p>
+      <a href="https://bible.usccb.org/bible/1corinthians/10" target="_blank" rel="noopener">閱讀林前10章 ↗</a> · <a href="https://bible.usccb.org/bible/1corinthians/11" target="_blank" rel="noopener">閱讀林前11章 ↗</a>
+    </details>
+    <details class="passage">
+      <summary>「不按理吃喝」係咪即係我唔夠好？</summary>
+      <p>11:27的警告要連同17–22及33–34節閱讀：保羅責備他們的吃喝方式及群體關係。自省並非證明自己毫無過失；經文隨後仍吩咐人吃餅喝杯，並彼此等候。</p>
+      <p>「分辨身體」涉及基督在聖餐中的身體、教會作為身體，以及兩者關係的解釋討論。本頁把群體脈絡列作研讀重點，並不宣稱它排除了其他聖餐神學理解。</p>
+    </details>
+    <fieldset id="position-picker">
+      <legend>選擇要比較的傳統</legend>
+    </fieldset>
+    <p class="context">以下是文件摘要，不是各宗派所有立場的總表。路德宗以LCMS、改革宗以《西敏信條》、衛理宗以UMC、浸信會以美南浸信會文件為代表；香港堂會的頻率及資格須按本身規定核對。可取消勾選以逐組比較。</p>
+    <div id="comparison"></div>
+    <div class="study-question">
+      <h2>同領一個餅之後，我哋點樣相待？</h2>
+      <p>若一個人能領聖餐，卻長期在群體中被忽略，教會可以怎樣回應？試比較各份文件：它們如何連起「領受基督」與「彼此相交」？</p>
+      <a href="#event-house">家庭聚會與證據界線 →</a><a href="#event-body">一個身體與軟弱肢體 →</a>
+    </div>
+  </section>
+</main>
+<footer class="wrap footer">神學研究網站 <span>哥林多與聖餐 · 2026-11-18</span></footer>
+</body>
+</html>
+

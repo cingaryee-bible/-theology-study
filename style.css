@@ -99,3 +99,6 @@ nav{width:100%;gap:19px}
   nav{gap:5px 16px;flex-wrap:wrap}
   nav a{font-size:.8rem}
 }
+
+
+.topic-nav{display:flex;align-items:center;flex-wrap:wrap;gap:9px 18px;padding-top:20px;font-size:.88rem}.topic-nav a{padding:5px 10px;border:1px solid var(--line);border-radius:5px;text-decoration:none}.topic-nav a[aria-current]{background:var(--pine);color:var(--card)}.tableau{background:#e9e2cf;color:var(--pine);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 22px}.tableau h2{font-size:clamp(1.7rem,4vw,2.8rem);margin:5px 0 12px}.tableau p{color:var(--muted);font-size:1rem;margin-bottom:12px}.tableau .bread-mark{font:100px/1.1 var(--serif);color:var(--rust)}

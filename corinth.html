@@ -5,9 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="走入羅馬哥林多的城市、聚會與餐桌，比較五份代表教會文件對聖餐的理解。">
 <title>神學研究網站｜哥林多與聖餐</title>
-<link rel="stylesheet" href="style.css?v=20261118">
+<link rel="stylesheet" href="style.css?v=20261118b">
 <script defer src="corinth-data.js?v=20261118"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script defer src="app.js?v=20261118"></script>
+<script defer src="corinth-atlas.js?v=20261118b"></script>
 </head>
 <body>
 <header class="mast">
@@ -32,6 +35,14 @@
       </div>
       <div class="tableau"><span class="eyebrow">林前10–12章 · 研讀主線</span><div class="bread-mark" aria-hidden="true">◯</div><h2>一個餅 · 一個身體</h2><p>從城市的身份與分裂<br>走到基督餐桌上的彼此接納</p><a href="#event-supper">由主餐的衝突開始 →</a></div>
     </div>
+    <section class="atlas" aria-labelledby="atlas-title">
+      <div class="atlas-heading"><div><div class="eyebrow">03｜歷史時空探索</div><h2 id="atlas-title">沿著時間，走進地點</h2><p>點地圖上的城市，同時查看經文、教會歷史、地點及研究資料；點時間軸事件，地圖會跟隨定位。</p></div><button id="atlas-reset" type="button">回到全覽</button></div>
+      <div class="atlas-controls"><label>歷史層次 <select id="atlas-track"><option value="">全部層次</option><option>聖經事件</option><option>羅馬帝國</option><option>初期教會</option><option>神學家</option><option>宗派發展</option></select></label><label><input type="checkbox" id="atlas-local"> 只看已選城市</label></div>
+      <div class="atlas-layout"><div><div id="atlas-map" role="region" aria-label="互動歷史地圖"></div><iframe id="atlas-map-fallback" title="已選城市的OpenStreetMap地圖" loading="lazy"></iframe><p id="atlas-map-status" class="context">底圖為現代地理定位，並非古代國界或已知旅行路線。可拖動、縮放，點城市標記開啟資料。</p><div id="atlas-city-buttons" class="atlas-buttons" aria-label="選擇城市"></div></div><div class="atlas-timeline"><h3>跨時代時間軸</h3><p class="context">前146年至2004年，按年代排序、非等比例；約數與後世接受史另有標示。</p><label for="atlas-scrub">沿時間軸移動</label><input id="atlas-scrub" type="range" min="0" max="12" value="3"><output id="atlas-current-time" for="atlas-scrub"></output><ol id="atlas-time-list"></ol></div></div>
+      <article id="atlas-event" class="lens" aria-live="polite"></article>
+      <h2 id="atlas-city-title"></h2><div id="atlas-dossier" class="atlas-dossier" aria-live="polite"></div>
+    </section>
+    <h2 id="corinth-scenes">深入哥林多：背景場景</h2><p>以下為哥林多專題資料；上方地圖可切換其他城市的資料。</p>
     <div class="workspace">
       <aside class="timeline" aria-labelledby="timeline-title">
         <h2 id="timeline-title">歷史場景與經文</h2>

@@ -28,6 +28,7 @@ function renderHistory(selected) {
     <div class="meta"><span class="kind">${selected.type}</span><span>${selected.date}</span></div>
     <h2 id="event-title" tabindex="-1">${selected.title}</h2>
     <p>${selected.text}</p>
+    ${window.buildingPhotos ? window.buildingPhotos(document.body.dataset.researchCity || 'corinth', selected.title + selected.text + selected.lens) : ''}
     <div class="lens"><h3>研讀線索</h3><p>${selected.lens}</p></div>
     <h3>資料來源</h3>
     ${links(selected.refs)}

@@ -102,7 +102,7 @@ function render(entry) {
   const article = element('article', '', 'daily-article');
   const readings = element('section');
   readings.id = 'readings';
-  readings.append(element('h2','今日經文'), element('p','修訂共同經課（半連續讀經） · 繁體和合本。點選各段標題可展開全文。','reading-source'));
+  readings.append(element('h2','今日經文'), element('p','修訂共同經課（半連續讀經） · 和合本修訂版。點選各段標題可展開全文。','reading-source'));
   for (const reading of entry.readings) readings.append(renderReading(reading));
 
   const navigation = element('nav', '', 'daily-subnav');
